@@ -168,6 +168,13 @@ document.getElementById("apply").addEventListener("click", function () {
 })
 
 
+document.getElementById("continue").addEventListener("click",function(){
+
+    window.location.reload();
+
+})
+
+
 
 
 function deleteElement(arr, element) {
