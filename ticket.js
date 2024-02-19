@@ -123,7 +123,7 @@ document.getElementById("phoneNumber").addEventListener("keyup", function (e) {
 document.getElementById("apply").addEventListener("click", function () {
     const getCoupon = document.getElementById("coupon").value;
     const getConvertedCoupon = getCoupon.toLowerCase().split(" ").join("");
-    if (getConvertedCoupon === "new15" || getConvertedCoupon === "couple20") {
+    if (getConvertedCoupon === "new15" || getConvertedCoupon === "couple20" || getConvertedCoupon === "21feb" || getConvertedCoupon === "mar26") {
         const totalCurrentPrice = parseInt(document.getElementById("totalBDT").innerText);
         if (getConvertedCoupon === "new15") {
             const discount = totalCurrentPrice * 15 / 100;
@@ -142,7 +142,7 @@ document.getElementById("apply").addEventListener("click", function () {
             const inputLabelField = document.getElementById("inputLabel");
             inputLabelField.classList.add("hidden");
         }
-        else {
+        else if(getConvertedCoupon === "couple20") {
             const discount = totalCurrentPrice * 20 / 100;
 
 
@@ -160,6 +160,47 @@ document.getElementById("apply").addEventListener("click", function () {
             const inputLabelField = document.getElementById("inputLabel");
             inputLabelField.classList.add("hidden");
         }
+
+        else if(getConvertedCoupon === "21feb") {
+            const discount = totalCurrentPrice * 21 / 100;
+
+
+
+            createTagAndSetInnerText("discount", "Discount Price");
+            document.getElementById("discount").classList.remove("hidden");
+            setDiscount("discount", discount);
+
+
+
+
+            const grandtotal = totalCurrentPrice - discount;
+            setInnerTextByID("grandTotalBDT", grandtotal);
+
+            const inputLabelField = document.getElementById("inputLabel");
+            inputLabelField.classList.add("hidden");
+        }
+
+        else {
+            const discount = totalCurrentPrice * 26 / 100;
+
+
+
+            createTagAndSetInnerText("discount", "Discount Price");
+            document.getElementById("discount").classList.remove("hidden");
+            setDiscount("discount", discount);
+
+
+
+
+            const grandtotal = totalCurrentPrice - discount;
+            setInnerTextByID("grandTotalBDT", grandtotal);
+
+            const inputLabelField = document.getElementById("inputLabel");
+            inputLabelField.classList.add("hidden");
+        }
+
+
+
     }
     else {
         alert("You have inserted wrong coupon");
@@ -176,6 +217,30 @@ document.getElementById("continue").addEventListener("click",function(){
 })
 
 
+
+
+
+document.getElementById("offer").addEventListener("click", function(){
+
+if(document.getElementById("offer").classList.contains("forme")){
+
+    document.getElementById("third").classList.add("hidden")
+    document.getElementById("fourth").classList.add("hidden");
+    document.getElementById("offer").innerText = "See All Offers"; 
+    document.getElementById("offer").classList.remove("forme");
+
+}
+
+else{
+    document.getElementById("offer").classList.add("forme");
+    document.getElementById("third").classList.remove("hidden");
+    document.getElementById("fourth").classList.remove("hidden");
+    document.getElementById("offer").innerText = "Close All Offers";
+}
+
+})
+
+    
 
 
 function deleteElement(arr, element) {
