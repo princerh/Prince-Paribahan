@@ -171,6 +171,7 @@ document.getElementById("apply").addEventListener("click", function () {
 document.getElementById("continue").addEventListener("click",function(){
 
     window.location.reload();
+    window.location.href = "index.html";
 
 })
 
