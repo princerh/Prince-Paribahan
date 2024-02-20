@@ -3,6 +3,7 @@ let seatSelectNumber = 0;
 let restTotalBDTAfterMinus = 0;
 let seatArray = [];
 let seatNameTyped = 0;
+let selected = 0;
 const seatButtons = document.querySelectorAll(".buttons");
 for (let i = 0; i < seatButtons.length; i++) {
     const seatName = seatButtons[i];
@@ -15,7 +16,8 @@ for (let i = 0; i < seatButtons.length; i++) {
             deleteElement(seatArray, seatNo);
             const lengthArray = seatArray.length
             setInnerTextByID("noOfselected", lengthArray);
-
+selected--;
+applyButton(selected);
             const totalSeats = parseInt(document.getElementById("totalSeats").innerText);
             const seatLeft = totalSeats + 1;
             document.getElementById("totalSeats").innerText = seatLeft;
@@ -47,12 +49,14 @@ for (let i = 0; i < seatButtons.length; i++) {
                 event.target.style.backgroundColor = "#1DD100";
                 event.target.style.color = "white";
 
-                applyButton(arrayLength);
+                selected++;
+                applyButton(selected);
 
                 // get seat left and set the rest 
                 const totalSeats = parseInt(document.getElementById("totalSeats").innerText);
                 const seatLeft = totalSeats - 1;
                 document.getElementById("totalSeats").innerText = seatLeft;
+
 
 
                 createTagAndSetInnerText("seat", seatNo, seatNo)
@@ -61,6 +65,7 @@ for (let i = 0; i < seatButtons.length; i++) {
 
                 setInnerTextByID("noOfselected", arrayLength);
 
+                
                 // get price and add to the total 
                 // const getStillPrice = document.getElementById("totalBDT").innerText
 
@@ -69,29 +74,11 @@ for (let i = 0; i < seatButtons.length; i++) {
                 setInnerTextByID("totalBDT", totalBDTT);
                 setInnerTextByID("grandTotalBDT", totalBDTT);
 
-                // if(restTotalBDTAfterMinus){
-                //     let totalBDT = restTotalBDTAfterMinus + 550;
-                //     setInnerTextByID("totalBDT", totalBDT);
-                //     setInnerTextByID("grandTotalBDT", totalBDT);
-                // }
-                // else{
-                //     let nextCurrentTotal = parseInt(document.getElementById("totalBDT").innerText);
-                //     let withOutMinus = nextCurrentTotal + 550;
-                //     setInnerTextByID("totalBDT", withOutMinus);
-                //     setInnerTextByID("grandTotalBDT", withOutMinus);
-                // }
-
-                // total price 
-
-                // 
-                // let now = nextCurrentTotal
-                // grand total price
-
-
-
 
                 const phoneNumber = document.getElementById("phoneNumber").value;
                 nextButton(phoneNumber, arrayLength);
+
+                
             }
 
             else {
@@ -258,8 +245,7 @@ function applyButton(seatSelectNumber) {
     else {
         document.getElementById("apply").setAttribute("disabled", true);
     }
-}
-// function for clearing disability of next button 
+} 
 function nextButton(phoneNumber, seatSelectNumber) {
     if (phoneNumber && seatSelectNumber) {
         document.getElementById("next").removeAttribute("disabled");
