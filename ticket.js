@@ -181,6 +181,8 @@ document.getElementById("apply").addEventListener("click", function () {
 
             const inputLabelField = document.getElementById("inputLabel");
             inputLabelField.classList.add("hidden");
+
+            
         }
         else if(getConvertedCoupon === "couple20") {
             const discount = totalCurrentPrice * 20 / 100;
@@ -240,7 +242,10 @@ document.getElementById("apply").addEventListener("click", function () {
         }
 
 
-
+        disableButton(seatButtons);
+        document.getElementById("payment").classList.remove("hidden");
+        
+        
     }
     else {
         alert("You have inserted wrong coupon");
@@ -256,7 +261,15 @@ document.getElementById("continue").addEventListener("click",function(){
 
 })
 
+document.getElementById("search").addEventListener("click", function(e){
+e.target.classList.add("hidden");
+document.getElementById("searcharea").classList.remove("hidden");
+})
 
+document.getElementById("searcharea").addEventListener("onchange",function(e){
+    e.target.classList.add("hidden");
+    document.getElementById("search").classList.remove("hidden");
+})
 
 
 
@@ -305,6 +318,11 @@ document.getElementById("emaill").addEventListener("change", function(e){
     console.log(mail);
 })
 
+function disableButton(seatButtons){
+    for(const seat of seatButtons){
+        seat.setAttribute("disabled", true);
+    }
+}
 function nextButton(phoneNumber, seatSelectNumber, mail) {
     if (phoneNumber.length === 11 && seatSelectNumber && mail ) {
         document.getElementById("next").removeAttribute("disabled");

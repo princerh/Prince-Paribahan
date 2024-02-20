@@ -29,6 +29,9 @@
         html {
             scroll-behavior: smooth;
         }
+        body{
+            user-select: none;
+        }
 
         .raleway {
             font-family: "Raleway", sans-serif;
@@ -109,18 +112,22 @@
                     <li><a>Home</a></li>
                     <li><a>About</a></li>
                     <li><a>Destination</a></li>
-                    <li><a>Search</a></li>
+                    <li id="search"><a>Search</a></li>
+                    <label id="searcharea" class="input  input-bordered flex items-center hidden gap-2">
+                        <input type="text" class="grow" placeholder="Search" />
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 opacity-70"><path fill-rule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clip-rule="evenodd" /></svg>
+                      </label>
                 </ul>
             </div>
             <div class="navbar-end ">
 
                 <div id="bus"
-                    class="text-[#1DD100] font-bold text-[20px] btn bg-[#1DD1001A] border border-[ #1DD10066] mr-1 lg:mr-0 seeme">
+                    class="text-[#1DD100] font-bold text-[20px] btn bg-[#1DD1001A] border border-[ #1DD10066] mr-1 lg:mr-0 seeme tooltip tooltip-bottom flex" data-tip="click me">
                     <a href="">Bus</a> <img src="./images/bus-icon.png" alt="">
                 </div>
                 <div id="truck"
-                    class="text-[#1DD100] font-bold text-[20px] btn bg-[#1DD1001A] border border-[ #1DD10066] mr-1 lg:mr-0 hidden">
-                    <a href="">Truck</a> <img class="w-6" src="./images/org.png" alt="">
+                    class="text-[#1DD100] font-bold text-[20px] btn bg-[#1DD1001A] border border-[ #1DD10066] mr-1 lg:mr-0 hidden tooltip tooltip-bottom flex" data-tip="click me">
+                    <a href="">Truck</a> <img class="w-7" src="./images/org.png" alt="">
                 </div>
             </div>
         </div>
@@ -479,7 +486,7 @@
                             </div>
 
                             <!-- 2nd column -->
-                            <div
+                            <div id="row-1"
                                 class="grid grid-cols-1 justify-center items-center text-center space-y-4 inter font-medium text-xs">
                                 <button class="btn buttons w-[60px] lg:w-[100px]">A1</button>
                                 <button class="btn buttons w-[60px] lg:w-[100px]">B1</button>
@@ -602,6 +609,7 @@
                             <p>BDT <span id="grandTotalBDT">0</span></p>
                         </div>
                     </div>
+                    <button id="payment" class="btn mt-5 flex justify-center mx-auto btn-outline border-[#1DD100] hidden hover:bg-[#1DD100]"><a href="https://vms.bkash.com:9081/index.php/login" target="_blank">Proceed To Payment</a></button>
                     <!-- form section  -->
                     <div class="mt-8 space-y-4">
 
