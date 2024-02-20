@@ -114,9 +114,14 @@
             </div>
             <div class="navbar-end ">
 
-                <div
-                    class="text-[#1DD100] font-bold text-[20px] btn bg-[#1DD1001A] border border-[ #1DD10066] mr-1 lg:mr-0">
-                    <a href="">Bus</a> <img src="./images/bus-icon.png" alt=""></div>
+                <div id="bus"
+                    class="text-[#1DD100] font-bold text-[20px] btn bg-[#1DD1001A] border border-[ #1DD10066] mr-1 lg:mr-0 seeme">
+                    <a href="">Bus</a> <img src="./images/bus-icon.png" alt="">
+                </div>
+                <div id="truck"
+                    class="text-[#1DD100] font-bold text-[20px] btn bg-[#1DD1001A] border border-[ #1DD10066] mr-1 lg:mr-0 hidden">
+                    <a href="">Truck</a> <img class="w-6" src="./images/org.png" alt="">
+                </div>
             </div>
         </div>
         <!-- navbar section  -->
@@ -125,7 +130,56 @@
 
     <main class="container mx-auto">
         <!-- banner section  -->
-        <section class="my-10 ">
+        <section id="truck-image" class="my-10 hidden ">
+            <div
+                class="flex flex-col justify-center items-center text-center bg-center bg-no-repeat h-[550px]  rounded-3xl bg-[linear-gradient(360deg,rgba(3,7,18,0.5),rgba(3,7,18,0)),url(./images/edited.jpg)] space-y-10 lg:space-y-8">
+                <h2 class="font-extrabold text-xl lg:text-3xl raleway text-white">End-to-End Travel with <br> <span
+                        class="text-amber-400">PRINCE Paribahan</span></h2>
+                <p class="inter font-normal text-white text-xs w-2/3 ">Elevate Your Logistics Experience with Us! From
+                    efficient cargo handling to timely deliveries, our transport company ensures reliability and
+                    excellence at every step. Explore our services now!</p>
+                <a href="#paribahan"
+                    class="scroll scroll-smooth text-[#030712] raleway font-bold text-xl bg-amber-400 btn  ">Book Trucks</a>
+            </div>
+            <!-- card section -->
+            <div
+                class="grid grid-cols-1 lg:grid-cols-3 justify-center items-center gap-5 px-5 mt-10 lg:mt-0 lg:px-16 lg:-translate-y-12 ">
+                <!-- 1st card  -->
+                <div class="flex items-center gap-2 bg-white rounded-2xl border-b-4 border-b-amber-400 p-4 ">
+                    <div><img src="./images/people.png" alt=""></div>
+                    <div>
+                        <h4 class="inter font-bold text-2xl">500K+</h4>
+                        <p class="text-[ #03071299] inter font-normal text-xs">Registered users</p>
+                    </div>
+                </div>
+
+                <!-- 2nd card  -->
+                <div class="flex items-center gap-2 bg-white rounded-2xl border-b-4 border-b-amber-400 p-4">
+                    <div><img src="./images/ticket-cupon.png" alt=""></div>
+                    <div>
+                        <h4 class="inter font-bold text-2xl">1.7 lacks</h4>
+                        <p class="text-[ #03071299] inter font-normal text-xs">Tickets sold</p>
+                    </div>
+                </div>
+
+                <!-- 3rd card  -->
+                <div class="flex items-center gap-2 bg-white rounded-2xl border-b-4 border-b-amber-400 p-4">
+                    <div><img src="./images/stoppage.png" alt=""></div>
+                    <div>
+                        <h4 class="inter font-bold text-2xl">80K+</h4>
+                        <p class="text-[ #03071299] inter font-normal text-xs">Rental partners</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+        <!-- banner section  -->
+
+
+
+
+        <section id="bus-image" class="my-10 ">
             <div
                 class="flex flex-col justify-center items-center text-center bg-center bg-no-repeat h-[550px]  rounded-3xl bg-[linear-gradient(360deg,rgba(3,7,18,0.5),rgba(3,7,18,0)),url(./images/banner.png)] space-y-10 lg:space-y-8">
                 <h2 class="font-extrabold text-xl lg:text-3xl raleway text-white">End-to-End Travel with <br> <span
@@ -170,7 +224,21 @@
             </div>
 
         </section>
-        <!-- banner section  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         <!-- coupon section  -->
@@ -178,7 +246,8 @@
             <div class="text-center space-y-10 px-2 lg:px-0 mx-auto">
                 <div class="space-y-2">
                     <h2 class="text-[#030712] raleway font-bold text-2xl lg:text-3xl">Best offers for you</h2>
-                <marquee class="text-2xl text-red-500 raleway font-normal" behavior="" direction="">Book four seats together and get the offers!</marquee>
+                    <marquee class="text-2xl text-red-500 raleway font-normal" behavior="" direction="">Book four seats
+                        together and get the offers!</marquee>
                 </div>
                 <!-- two coupons -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 ">
@@ -216,9 +285,10 @@
                             <P class="text-[ #03071266] font-medium text-xs text-center raleway">Coupon Code</P>
                         </div>
                     </div>
-                    
+
                     <!-- 3rd coupon  -->
-                    <div id="third" class="bg-rose-200 hidden flex justify-center items-center rounded-xl pl-2 lg:pl-0  ">
+                    <div id="third"
+                        class="bg-rose-200 hidden flex justify-center items-center rounded-xl pl-2 lg:pl-0  ">
                         <!-- 1st part -->
                         <div class="text-center">
                             <h3 class=" inter text-[#030712CC] font-extrabold text-2xl">21% OFF</h3>
@@ -235,7 +305,8 @@
                     </div>
 
                     <!-- 4th coupon  -->
-                    <div id="fourth" class="bg-green-300 hidden flex justify-center items-center rounded-xl pl-2 lg:pl-0 ">
+                    <div id="fourth"
+                        class="bg-green-300 hidden flex justify-center items-center rounded-xl pl-2 lg:pl-0 ">
                         <!-- 1st part -->
                         <div class="text-center">
                             <h3 class=" inter text-[#030712CC] font-extrabold text-2xl">26% OFF</h3>
@@ -534,34 +605,39 @@
                     <!-- form section  -->
                     <div class="mt-8 space-y-4">
 
-                        <!-- name  -->
-                        <label class="form-control w-full max-w-xs">
-                            <div class="mb-2">
-                                <span class="inter font-bold text-xs text-[#030712] px-0">Passenger Name*</span>
-                            </div>
-                            <input type="text" placeholder="Enter your name" class="input input-bordered w-full"
-                                required />
-                        </label>
+                        <form action="">
 
-                        <!-- phone number  -->
-                        <label class="form-control w-full max-w-xs">
-                            <div class="mb-2">
-                                <span class="inter font-bold text-xs text-[#030712] px-0">Phone Number*</span>
-                            </div>
+                            <!-- name  -->
+                            <label class="form-control w-full max-w-xs">
+                                <div class="mb-2">
+                                    <span class="inter font-bold text-xs text-[#030712] px-0">Passenger Name</span>
+                                </div>
+                                <input type="text" placeholder="Enter your name" class="input input-bordered w-full"
+                                    required />
+                            </label>
 
-                            <input type="number" id="phoneNumber" placeholder="Enter your phone number"
-                                class="input input-bordered w-full " />
-                        </label>
-                        <!-- email  -->
-                        <label class="form-control w-full max-w-xs">
-                            <div class="mb-2">
-                                <span class="inter font-bold text-xs text-[#030712] px-0">Email ID</span>
-                            </div>
-                            <input type="email" placeholder="Enter your email id" class="input input-bordered w-full" />
-                        </label>
-                        <!-- button  -->
-                        <button id="next" class="btn raleway w-full text-xl font-bold text-white bg-[#1DD100]"
-                            onclick="my_modal_1.showModal()" disabled>Next</button>
+                            <!-- phone number  -->
+                            <label class="form-control w-full max-w-xs">
+                                <div class="mb-2">
+                                    <span class="inter font-bold text-xs text-[#030712] px-0">Phone Number*</span>
+                                </div>
+
+                                <input type="number" id="phoneNumber" placeholder="Enter your 11 digit phone number"
+                                    class="input input-bordered w-full " />
+                            </label>
+                            <!-- email  -->
+                            <label class="form-control w-full max-w-xs">
+                                <div class="mb-2">
+                                    <span class="inter font-bold text-xs text-[#030712] px-0">Email ID*</span>
+                                </div>
+                                <input id="emaill" type="email" placeholder="Enter your email id"
+                                    class="input input-bordered w-full" />
+                            </label>
+                            <!-- button  -->
+                            <button id="next" class="btn raleway w-full mt-4 text-xl font-bold text-white bg-[#1DD100]"
+                                onclick="my_modal_1.showModal()" disabled>Next</button>
+
+                        </form>
 
                         <!-- optional -->
 
@@ -579,7 +655,8 @@
                                 <div class="">
                                     <form method="dialog">
                                         <!-- if there is a button in form, it will close the modal -->
-                                        <button id="continue" class="btn w-fit px-6  text-white bg-fuchsia-600">Continue</button>
+                                        <button id="continue"
+                                            class="btn w-fit px-6  text-white bg-fuchsia-600">Continue</button>
                                     </form>
                                 </div>
                             </div>

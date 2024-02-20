@@ -40,12 +40,12 @@ applyButton(selected);
 
         }
         else {
-            seatArray.push(seatNo);
+        
             console.log(seatArray);
             const arrayLength = seatArray.length;
 
 
-            if (arrayLength < 5) {
+            if (arrayLength < 4) {
                 event.target.style.backgroundColor = "#1DD100";
                 event.target.style.color = "white";
 
@@ -58,12 +58,12 @@ applyButton(selected);
                 document.getElementById("totalSeats").innerText = seatLeft;
 
 
-
+ 
                 createTagAndSetInnerText("seat", seatNo, seatNo)
                 createTagAndSetInnerText("class", "Economy", seatNo)
                 createTagAndSetInnerText("price", 550, seatNo)
 
-                setInnerTextByID("noOfselected", arrayLength);
+                setInnerTextByID("noOfselected", selected);
 
                 
                 // get price and add to the total 
@@ -76,9 +76,10 @@ applyButton(selected);
 
 
                 const phoneNumber = document.getElementById("phoneNumber").value;
-                nextButton(phoneNumber, arrayLength);
+                const mail = document.getElementById("emaill").value;
+                nextButton(phoneNumber, selected, mail);
 
-                
+                seatArray.push(seatNo)
             }
 
             else {
@@ -98,13 +99,65 @@ applyButton(selected);
 
 
 
+
+document.getElementById("bus").addEventListener("click", function(e){
+
+document.getElementById("bus-image").classList.add("hidden");
+document.getElementById("truck-image").classList.remove("hidden");
+    if(document.getElementById("bus").classList.contains("seeme")){
+        e.preventDefault();
+        document.getElementById("bus").classList.add("hidden");
+        document.getElementById("truck").classList.remove("hidden");
+        document.getElementById("bus").classList.remove("seeme");
+        document.getElementById("truck").classList.add("seeme");
+    } else {
+        document.getElementById("truck").classList.add("hidden");
+        document.getElementById("bus").classList.remove("hidden");
+        document.getElementById("truck").classList.remove("seeme");
+        document.getElementById("bus").classList.add("seeme");
+    }
+});
+
+document.getElementById("truck").addEventListener("click", function(e){
+    document.getElementById("truck-image").classList.add("hidden");
+    document.getElementById("bus-image").classList.remove("hidden");
+    if(document.getElementById("truck").classList.contains("seeme")){
+        e.preventDefault();
+        document.getElementById("truck").classList.add("hidden", "seeme");
+        document.getElementById("bus").classList.remove("hidden");
+        document.getElementById("truck").classList.remove("seeme");
+        document.getElementById("bus").classList.add("seeme");
+    } else {
+        e.preventDefault();
+        document.getElementById("bus").classList.add("hidden");
+        document.getElementById("truck").classList.remove("hidden");
+        document.getElementById("bus").classList.remove("seeme");
+        document.getElementById("truck").classList.add("seeme");
+    }
+});
+
+
+
+
+
+
+
+
+
 document.getElementById("phoneNumber").addEventListener("keyup", function (e) {
     const phoneNumber = e.target.value;
-
+const mail = document.getElementById("emaill").value;
     const arrayLength = seatArray.length;
-    nextButton(phoneNumber, arrayLength);
+    nextButton(phoneNumber, arrayLength, mail);
 })
 
+document.getElementById("emaill").addEventListener("keyup", function(e){
+    const mail = e.target.value;
+    const phoneNumber = document.getElementById("phoneNumber").value;
+    console.log(mail);
+    const arrayLength = seatArray.length;
+    nextButton(phoneNumber, arrayLength, mail);
+})
 
 
 document.getElementById("apply").addEventListener("click", function () {
@@ -246,8 +299,14 @@ function applyButton(seatSelectNumber) {
         document.getElementById("apply").setAttribute("disabled", true);
     }
 } 
-function nextButton(phoneNumber, seatSelectNumber) {
-    if (phoneNumber && seatSelectNumber) {
+
+document.getElementById("emaill").addEventListener("change", function(e){
+    const mail = e.target.value;
+    console.log(mail);
+})
+
+function nextButton(phoneNumber, seatSelectNumber, mail) {
+    if (phoneNumber.length === 11 && seatSelectNumber && mail ) {
         document.getElementById("next").removeAttribute("disabled");
     }
     else {
