@@ -288,6 +288,8 @@ document.getElementById("searcharea").addEventListener("onchange",function(e){
 
 
 
+
+
 document.getElementById("offer").addEventListener("click", function(){
 
 if(document.getElementById("offer").classList.contains("forme")){
@@ -333,7 +335,7 @@ document.getElementById("emaill").addEventListener("change", function(e){
     console.log(mail);
 })
 
-document.getElementById("transaction").addEventListener("change", function(e){
+document.getElementById("transaction").addEventListener("keyup", function(e){
     const mail = e.target.value;
     const phoneNumber = document.getElementById("phoneNumber").value;
     console.log(mail);
