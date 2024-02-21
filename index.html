@@ -641,6 +641,12 @@
                                 <input id="emaill" type="email" placeholder="Enter your email id"
                                     class="input input-bordered w-full" />
                             </label>
+                            <label class="form-control w-full max-w-xs">
+                                <div class="mb-2">
+                                    <span class="inter font-bold text-xs text-[#030712] px-0">Transaction ID*</span>
+                                </div>
+                                <input id="transaction" type="text" placeholder="Type Bkash transaction ID" class="input input-bordered input-secondary w-full max-w-xs" />
+                            </label>
                             <!-- button  -->
                             <button id="next" class="btn raleway w-full mt-4 text-xl font-bold text-white bg-[#1DD100]"
                                 onclick="my_modal_1.showModal()" disabled>Next</button>
@@ -714,7 +720,7 @@
                 <!-- 2nd  -->
                 <div class="flex flex-col justify-center items-center space-y-4 mt-10 lg:mt-0">
                     <p class=" text-xl text-white font-semibold raleway">Download our app</p>
-                    <div class="flex gap-2 items-center p-2 bg-black border w-fit border-white rounded-lg">
+                    <div id="playStoreLink" class="flex gap-2 cursor-pointer items-center p-2 bg-black border w-fit border-white rounded-lg">
                         <div><img src="./images/playstore.png" alt=""></div>
                         <div class="text-white">
                             <p class="font-normal text-xs">GET IT ON</p>
@@ -740,6 +746,11 @@
                 </div>
 
             </div>
+
+            <div >
+                <div class="flex bg-white rounded-md p-1 justify-center items-center space-x-2 mt-3"><img class="w-20 text-white" src="./images/bkash.png" alt=""> <p>01851918442</p></div>
+            </div>
+            
 
 
         </div>

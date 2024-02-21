@@ -36,12 +36,20 @@ applyButton(selected);
             setInnerTextByID("grandTotalBDT", restTotalBDTAfterMinus);
 
 
+            const phoneNumber = document.getElementById("phoneNumber").value;
+            const mail = document.getElementById("emaill").value;
+            const transaction = document.getElementById("transaction").value;
 
+
+            const arr = seatArray.length;
+            console.log(arr);
+
+            nextButton(phoneNumber, arr, mail, transaction);
 
         }
         else {
         
-            console.log(seatArray);
+            
             const arrayLength = seatArray.length;
 
 
@@ -77,11 +85,16 @@ applyButton(selected);
 
                 const phoneNumber = document.getElementById("phoneNumber").value;
                 const mail = document.getElementById("emaill").value;
-                nextButton(phoneNumber, selected, mail);
+                const transaction = document.getElementById("transaction").value;
+
 
                 seatArray.push(seatNo)
-            }
+                const arr = seatArray.length;
+                console.log(arr);
 
+                nextButton(phoneNumber, arr, mail, transaction);
+            }
+            
             else {
                 alert("Sorry! You cannot book more than 4 seats");
             }
@@ -148,7 +161,8 @@ document.getElementById("phoneNumber").addEventListener("keyup", function (e) {
     const phoneNumber = e.target.value;
 const mail = document.getElementById("emaill").value;
     const arrayLength = seatArray.length;
-    nextButton(phoneNumber, arrayLength, mail);
+    const transaction = document.getElementById("transaction").value;
+    nextButton(phoneNumber, arrayLength, mail, transaction);
 })
 
 document.getElementById("emaill").addEventListener("keyup", function(e){
@@ -156,7 +170,8 @@ document.getElementById("emaill").addEventListener("keyup", function(e){
     const phoneNumber = document.getElementById("phoneNumber").value;
     console.log(mail);
     const arrayLength = seatArray.length;
-    nextButton(phoneNumber, arrayLength, mail);
+    const transaction = document.getElementById("transaction").value;
+    nextButton(phoneNumber, arrayLength, mail, transaction);
 })
 
 
@@ -318,13 +333,28 @@ document.getElementById("emaill").addEventListener("change", function(e){
     console.log(mail);
 })
 
+document.getElementById("transaction").addEventListener("change", function(e){
+    const mail = e.target.value;
+    const phoneNumber = document.getElementById("phoneNumber").value;
+    console.log(mail);
+    const arrayLength = seatArray.length;
+    const transaction = e.target.value;
+    nextButton(phoneNumber, arrayLength, mail, transaction);
+
+})
+
+
+    document.getElementById('playStoreLink').addEventListener('click', function() {
+        window.open('https://play.google.com/store');
+    })
+
 function disableButton(seatButtons){
     for(const seat of seatButtons){
         seat.setAttribute("disabled", true);
     }
 }
-function nextButton(phoneNumber, seatSelectNumber, mail) {
-    if (phoneNumber.length === 11 && seatSelectNumber && mail ) {
+function nextButton(phoneNumber, seatSelectNumber, mail, transaction) {
+    if (phoneNumber.length === 11 && seatSelectNumber && mail && transaction) {
         document.getElementById("next").removeAttribute("disabled");
     }
     else {
